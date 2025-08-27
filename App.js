@@ -18,23 +18,28 @@ export default function App() {
   }
 
   return (
+
     <View style={styles.container}>
+    
+        <View style={styles.containerCont}>
       <Text style={styles.title}>Contador</Text>
       <Text style={styles.counterText}>{contador}</Text>
-      <View style={styles.buttonContainer}>
+      </View>
 
-        
+      <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button} onPress={handleDecrement}>
-          <Text style={styles.buttonText} >Diminuir</Text>
+          <Text style={styles.buttonText} >-1</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={handleIncrement}>
-          <Text  style={styles.buttonText}>Aumentar</Text>
+          <Text  style={styles.buttonText}>+1</Text>
         </TouchableOpacity>
 
+
+
       </View>
-        <TouchableOpacity style={[styles.button, styles.resetButton]} onPress={handleReset}>
-          <Text style={styles.buttonText} >Zerar</Text>
+        <TouchableOpacity style={[styles.zerar, styles.resetButton]} onPress={handleReset}>
+          <Text style={styles.buttonText} >zerar</Text>
         </TouchableOpacity>
       <StatusBar style="auto" />        
     </View>
@@ -42,13 +47,25 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  containerCont:{
+    marginBottom:20,
+    backgroundColor: '#C890A7',
+    paddingVertical: 30,
+    paddingHorizontal: 40,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5F5F5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title:{
+    justifyContent:'center',
+    alignItems:'center',
+    color:"#ffffff",
     fontSize:32,
     fontWeight: "bold",
     marginBottom: 20,
@@ -56,12 +73,18 @@ const styles = StyleSheet.create({
   counterText:{
     fontSize:64,
     fontWeight: "bold",
-    color: "#333",
+    color: "#ffffff",
     marginBottom:30
   },
   button:{
-    backgroundColor: "#007bff",
-    paddingVertical: 15,
+    backgroundColor: "#DD88CF",
+    paddingVertical: 35,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+  },
+  zerar:{
+    backgroundColor: "#4B164C",
+    paddingVertical: 30,
     paddingHorizontal: 40,
     borderRadius: 10,
   },
@@ -76,6 +99,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   resetButton:{
-    backgroundColor: "#dc3545",
+    backgroundColor: "#FF0066",
+    
   }
 });
